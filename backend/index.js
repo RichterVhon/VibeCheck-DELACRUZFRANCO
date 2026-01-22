@@ -47,6 +47,11 @@ app.get("/", (req, res) => {
     res.send("Welcome to the VibeCheck API! Try /api/fortune, /api/joke, /api/vibe, /api/smash, /api/smashes, or /api/secret.");
 });
 
+// secret members route
+app.get("/api/members", (req, res) => {
+    res.send("Members: Dela Cruz, Richter Vhon C.\nFranco, John Carlo S.");
+});
+
 // GET /api/fortune -> returns one random fortune
 app.get("/api/fortune", (req, res) => {
   const pick = fortunes[Math.floor(Math.random() * fortunes.length)];
