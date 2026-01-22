@@ -84,7 +84,11 @@ app.get("/api/vibe", (req, res) => {
 // POST /api/smash -> increases counter and returns the updated value
 app.post("/api/smash", (req, res) => {
   smashes += 1;
-  res.json({ smashes });
+  const milestone = smashes % 10 === 0 ? "BULLSEYE!" : null;
+  res.json({ 
+    smashes,
+    milestone 
+    });
 });
 
 // GET /api/smashes -> returns current counter
