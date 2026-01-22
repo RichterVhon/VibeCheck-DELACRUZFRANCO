@@ -4,23 +4,125 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VibeCheck 411L</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-color: #f8fafc;
+      --accent-color: #8b5cf6;
+      --accent-hover: #a78bfa;
+      --danger: #ef4444;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #8b5cf6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      color: #94a3b8;
+      margin-bottom: 2rem;
+    }
+
+    .container {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #334155;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+
+    button:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    /* Special Styling for specific buttons */
+    #btnSmash { background-color: #991b1b; }
+    #btnSmash:hover { background-color: var(--danger); }
+    
+    #btnSecret { background-color: #475569; font-style: italic; }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      margin-top: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    #out {
+      background-color: #020617;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent-color);
+      text-align: left;
+      min-height: 50px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: 'Courier New', Courier, monospace;
+      color: #10b981; /* Terminal green */
+    }
+  </style>
 </head>
 <body>
+
   <h1>VibeCheck 411L</h1>
-  <p>Click buttons. This page will fetch data from your Node.js API.</p>
+  <p>Interact with the Node.js API below</p>
 
-  <div>
-    <button id="btnFortune">🔮 Fortune</button>
-    <button id="btnJoke">😂 Joke</button>
-    <button data-mood="happy" class="btnMood">😄 Happy</button>
-    <button data-mood="tired" class="btnMood">🥱 Tired</button>
-    <button data-mood="stressed" class="btnMood">😵‍💫 Stressed</button>
-    <button id="btnSmash">💥 SMASH!</button>
-    <button id="btnSecret">🕵️ Secret</button>
+  <div class="container">
+    <div class="button-grid">
+      <button id="btnFortune">🔮 Fortune</button>
+      <button id="btnJoke">😂 Joke</button>
+      <button data-mood="happy" class="btnMood">😄 Happy</button>
+      <button data-mood="tired" class="btnMood">🥱 Tired</button>
+      <button data-mood="stressed" class="btnMood">😵‍💫 Stressed</button>
+      <button data-mood="angry" class="btnMood">😡 Angry</button>
+      <button id="btnSmash">💥 SMASH!</button>
+      <button id="btnSecret">🕵️ Secret</button>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #334155; margin: 20px 0;">
+
+    <h2>Output</h2>
+    <pre id="out">Ready for input...</pre>
   </div>
-
-  <h2>Output</h2>
-  <pre id="out">Ready...</pre>
 
   <script src="app.js"></script>
 </body>
