@@ -37,6 +37,7 @@ const vibeMap = {
   happy: { emoji: "😄", message: "Keep going - you're shipping greatness!" },
   tired: { emoji: "🥱", message: "Hydrate. Stretch. Then commit." },
   stressed: { emoji: "😵‍💫", message: "Breathe. One bug at a time." },
+  angry: { emoji: "😡", message: "Take a break. Your code will still be there." },
 };
 
 // Smash counter (stored in memory for now)
@@ -96,7 +97,7 @@ app.get("/api/secret", (req, res) => {
   const code = req.query.code;
 
   if (code === "411L") {
-    return res.json({ message: "🎉 Secret unlocked: +10 luck on your next merge!" });
+    return res.json({ message: "🎉 Secret unlocked: +10 SA MIDTERMS TOTOO YAN - SIR JANJAN" });
   }
 
   res.status(403).json({ message: "Nope 😄 Try code=411L" });
